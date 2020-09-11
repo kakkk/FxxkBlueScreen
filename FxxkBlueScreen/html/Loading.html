@@ -1,0 +1,254 @@
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var str1 = "http"
+                var myString = location.search.split('?')[1].replace(/%20/g, ' ');
+                var str2 = myString.substring(0, 4); 
+                $('body').css('background', "#" + myString);
+            }
+        </script>
+        <script type="text/javascript">
+            var message="Sorry, right-click has been disabled"; 
+            function clickIE() {if (document.all) {(message);return false;}} 
+            function clickNS(e) {
+                if (document.layers||(document.getElementById&&!document.all)) { 
+                    if (e.which==2||e.which==3) {
+                        (message);
+                        return false;
+                    }
+                }
+            } 
+            if (document.layers) {
+                document.captureEvents(Event.MOUSEDOWN);
+                document.onmousedown=clickNS;
+            } 
+            else
+            {
+                document.onmouseup=clickNS;
+                document.oncontextmenu=clickIE;
+            } 
+            document.oncontextmenu=new Function("return false") 
+        </script>
+        <script type="text/javascript">
+            var count=0;
+            var stage=1;
+            var stage2=3;
+            var counter=setInterval(timer, 250); //1000 will  run it every 1 second
+            var ref="Configuring updates";
+            function timer(){
+                count=count+1;
+                if (count <= 0){
+                    clearInterval(counter);
+                    return;
+                }
+                document.getElementById("timer").innerHTML=count +'%';
+                if (count > 99){
+                    stage=stage+1;
+                    document.getElementById("stage").innerHTML=stage +'';
+                    count=0;
+                    return;
+                }
+                if (stage > 3){
+                    stage2=68;
+                    ref="Installing Updates";
+                    document.getElementById("ref").innerHTML=ref +'';
+                    document.getElementById("stage2").innerHTML=stage2 +'';
+                    return;
+                }
+            }
+        </script>
+        <style type="text/css">
+            body {
+                background:#006dae; 
+                user-select:none;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                vertical-align:middle; 
+                text-align:center;
+                z-index: -1;
+                margin:0;
+                padding:0;
+                cursor: url(../assets/img/gQyFbtU.png), auto;
+            }
+
+            .CT {
+                vertical-align:middle;
+                position: absolute;
+                top: 50%;
+                height: 70px;
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+                width:500px;
+                margin-top: -5%;
+                font-family:微软雅黑,Segoe UI Light, Segoe UI, Arial;
+                font-size:23px;
+                color:#fff;
+                font-weight:normal;
+                text-align:center;
+                user-select:none;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+            }
+
+            .image_block {
+                position: absolute;
+                bottom: 17px;
+                left: 50%;
+                width: 50%;
+                margin: -5% 0 0 -25%;
+            }
+
+            p {
+                display:block;
+                float:middle;
+                text-align:center;
+                width:100%;
+            }
+
+            .centeragain {
+                width:500px;
+                margin:0px auto;
+                text-align:left;
+            }
+
+            .messageBox {  
+                display:block;
+                color:#67A2E6;
+                font-family:微软雅黑,Segoe UI Light, Segoe UI, Arial;
+                font-size:20px;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                user-select:none;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+                z-index:999;
+            }  
+
+            .loader {
+                position: relative;
+                padding-top: 100px;
+                width: 50px;
+                margin: auto;
+            }
+
+            .loader .circle {
+                position: absolute;
+                width: 48px;
+                height: 48px;
+                opacity: 0;
+                transform: rotate(225deg);
+                animation-iteration-count: infinite;
+                animation-name: orbit;
+                animation-duration: 5.5s;
+            }
+
+            .loader .circle:after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 5px;
+                background: #fff;
+                /* Pick a color */
+            }
+
+            .loader .circle:nth-child(2) {
+                animation-delay: 240ms;
+            }
+
+            .loader .circle:nth-child(3) {
+                animation-delay: 480ms;
+            }
+
+            .loader .circle:nth-child(4) {
+                animation-delay: 720ms;
+            }
+
+            .loader .circle:nth-child(5) {
+                animation-delay: 960ms;
+            }
+
+            @keyframes orbit {
+                0% {
+                    transform: rotate(225deg);
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                7% {
+                    transform: rotate(345deg);
+                    animation-timing-function: linear;
+                }
+                30% {
+                    transform: rotate(455deg);
+                    animation-timing-function: ease-in-out;
+                }
+                39% {
+                    transform: rotate(690deg);
+                    animation-timing-function: linear;
+                }
+                70% {
+                    transform: rotate(815deg);
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                75% {
+                    transform: rotate(945deg);
+                    animation-timing-function: ease-out;
+                }
+                76% {
+                    transform: rotate(945deg);
+                    opacity: 0;
+                }
+                100% {
+                    transform: rotate(945deg);
+                    opacity: 0;
+                }
+            }
+
+            #bottom {
+                position: fixed;
+                bottom: 10%;
+                width: 100%;
+                left:0;
+                text-align:center;
+            }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div style="display:block;position:absolute;min-width:100%; min-height:100%;margin:0;padding:0;">
+            <div class="centeragain">
+                <div class="CT">
+                    <div class="FONT">
+                        <div class='loader' style="vertical-align:middle;padding-top:2px;">
+                            <div class='circle'></div>
+                            <div class='circle'></div>
+                            <div class='circle'></div>
+                            <div class='circle'></div>
+                            <div class='circle'></div>
+                        </div><br>
+                        <br>
+                        <a id="ref" name="ref">正在准备蓝屏</a> &nbsp;<a id="timer" name="timer">0%</a> <span>完成。</span><br>
+                        <span>请勿关闭电源，来都来了，看完再走呗。</span>
+                    </div>
+                    <div id="bottom">
+                        你的电脑将蓝屏一次
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

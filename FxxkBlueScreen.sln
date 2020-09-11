@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxxkBlueScreen", "FxxkBlueScreen\FxxkBlueScreen.csproj", "{EC09E7CE-F99F-4685-A894-D8B3D41027DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC09E7CE-F99F-4685-A894-D8B3D41027DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC09E7CE-F99F-4685-A894-D8B3D41027DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC09E7CE-F99F-4685-A894-D8B3D41027DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC09E7CE-F99F-4685-A894-D8B3D41027DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5EF1377-0EBA-4C3B-8B40-7DDF5AB2CB4A}
+	EndGlobalSection
+EndGlobal
